@@ -7,12 +7,15 @@ class StoriesList extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final mobile = ResponsiveWrapper.of(context).isMobile;
+    
+    // print(ResponsiveWrapper.of(context)); para ver o active
 
     return Container(
-      margin:  EdgeInsets.symmetric(vertical: mobile ? 5 : 30),
+      margin:  EdgeInsets.symmetric(vertical: mobile ? 15 : 30),
       height: 110,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         separatorBuilder: (_, __) => const SizedBox(width: 16),
         itemCount: 16,
         itemBuilder: (_, i) => StoryCircle(),
